@@ -1,0 +1,177 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-25T09:58:50.246Z",
+    "end": "2023-10-25T09:58:56.381Z",
+    "duration": 6135,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "df447553-0fa0-44a4-a93c-d0f928a07942",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "59762831-564d-4b7f-91bb-f6be93a5b95f",
+          "title": "test login",
+          "fullFile": "/Users/testvagrant-1/Documents/api coding challenge/contactlist_apiautomation_assignment/test/contact/deleteContact.js",
+          "file": "/test/contact/deleteContact.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: Should login and get the bearer token in \"test login\"",
+              "fullTitle": "test login \"before all\" hook: Should login and get the bearer token in \"test login\"",
+              "timedOut": false,
+              "duration": 1628,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "token = await userTokenGenerator()",
+              "err": {},
+              "uuid": "f58b1bab-359b-40fa-951f-8cf482119876",
+              "parentUUID": "59762831-564d-4b7f-91bb-f6be93a5b95f",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to get contact id  ",
+              "fullTitle": "test login should be able to get contact id  ",
+              "timedOut": false,
+              "duration": 1634,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n    headers: {\n      Authorization: `Bearer ${token}`,\n    },\n  };\n  try {\n    const response = await axios.get(`${baseUrl}` ,\n      payload\n    );\n    \n     id = (response.data[0]._id);\n    expect(response.status).to.be.equal(200);\n  } catch (error) {\n    console.log(error);\n  }",
+              "err": {},
+              "uuid": "114a3050-05e6-43e9-9ee0-6543f4d51cf7",
+              "parentUUID": "59762831-564d-4b7f-91bb-f6be93a5b95f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "114a3050-05e6-43e9-9ee0-6543f4d51cf7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1634,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e579d888-3791-457a-9c5a-c87703e22ea9",
+          "title": "test  delete contact ",
+          "fullFile": "/Users/testvagrant-1/Documents/api coding challenge/contactlist_apiautomation_assignment/test/contact/deleteContact.js",
+          "file": "/test/contact/deleteContact.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to delte the contact ",
+              "fullTitle": "test  delete contact  should be able to delte the contact ",
+              "timedOut": false,
+              "duration": 1241,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n    headers: {\n      Authorization: `Bearer ${token}`,\n    },\n  };\n  try {\n    const response = await axios.delete(`${baseUrl}${id}`,\n      payload\n    );\n    \n    expect(response.status).to.be.equal(200);\n  } catch (error) {\n    console.log(error);\n  }",
+              "err": {},
+              "uuid": "e5842193-02cb-47fa-9fae-f0cba8df71c3",
+              "parentUUID": "e579d888-3791-457a-9c5a-c87703e22ea9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should shows error when try to delte the same contact ",
+              "fullTitle": "test  delete contact  should shows error when try to delte the same contact ",
+              "timedOut": false,
+              "duration": 1620,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n    headers: {\n      Authorization: `Bearer ${token}`,\n    },\n  };\n  try {\n    const response = await axios.delete(`${baseUrl}${id}`,\n      payload\n    );\n    \n    \n  } catch (error) {\n     expect(error.response.status).to.be.equal(404);\n    \n  }",
+              "err": {},
+              "uuid": "5cb23e37-ba53-48d3-a8e4-ca1f91027e22",
+              "parentUUID": "e579d888-3791-457a-9c5a-c87703e22ea9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e5842193-02cb-47fa-9fae-f0cba8df71c3",
+            "5cb23e37-ba53-48d3-a8e4-ca1f91027e22"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2861,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
