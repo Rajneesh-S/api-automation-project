@@ -11,11 +11,6 @@ const userTokenGenerator = require("../logintoken");
 const baseUrl = "https://thinking-tester-contact-list.herokuapp.com/contacts/";
 
 
-
-
-
-
-
 describe("test get contact details", function () {
 
    let id;
@@ -48,7 +43,7 @@ describe("test get contact details", function () {
         Authorization: `Bearer ${token}`,
       },
     };
-    try {
+    try { 
       const response = await axios.get(
         `${baseUrl}${id}` ,
         payload

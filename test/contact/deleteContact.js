@@ -63,6 +63,7 @@ describe("test  delete contact ", function(){
             );
             
             expect(response.status).to.be.equal(200);
+            
           } catch (error) {
             console.log(error);
           }
